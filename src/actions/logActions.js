@@ -26,9 +26,10 @@ export const getLogs = () => async (dispatch) => {
       payload: data,
     });
   } catch (err) {
+    console.log(err);
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data,
+      payload: err.response,
     });
   }
 };
