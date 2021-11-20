@@ -33,7 +33,7 @@ const EditLogModal = () => {
 
       dispatch(updateLog(updLog));
       M.toast({ html: `Log updated by ${tech}` });
-      // Clear Fields
+
       setMessage('');
       setTech('');
       setAttention(false);

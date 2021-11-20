@@ -72,7 +72,7 @@ export const deleteLog = (id) => async (dispatch) => {
     });
   }
 };
-// Set loading to true
+
 export const setLoading = () => {
   return {
     type: SET_LOADING,
@@ -105,7 +105,6 @@ export const updateLog = (log) => async (dispatch) => {
   }
 };
 
-// Set current log
 export const setCurrent = (log) => {
   return {
     type: SET_CURRENT,
@@ -132,7 +131,6 @@ export const searchLogs = (text) => async (dispatch) => {
   }
 };
 
-// Clear current log
 export const clearCurrent = () => {
   return {
     type: CLEAR_CURRENT,
