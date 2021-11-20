@@ -1,12 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { deleteTech } from '../../actions/techActions';
+import M from 'materialize-css/dist/js/materialize.min.js';
 
-const TechItem = ({ tech }) => {
+const TechItem = ({ tech: { id, firstName, lastName } }) => {
+  const dispatch = useDispatch();
+  const onDelete = () => {
+    dispatch(deleteTech(id));
+    M.toast({ html: 'Technician deleted' });
+  };
+
   return (
     <li className='collection-item'>
       <div>
-        {tech.firstName} {tech.lastName}
-        <a href='#!' className='secondary-content'>
+        {firstName} {lastName}
+        <a href='#!' className='secondary-content' onClick={onDelete}>
           <i className='material-icons grey-text'>delete</i>
         </a>
       </div>

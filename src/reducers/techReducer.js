@@ -1,5 +1,6 @@
 import {
   ADD_TECH,
+  DELETE_TECH,
   GET_TECHS,
   SET_LOADING,
   TECHS_ERROR,
@@ -35,6 +36,12 @@ const techReducer = (state = initialState, action) => {
       return {
         ...state,
         error: action.payload,
+        loading: false,
+      };
+    case DELETE_TECH:
+      return {
+        ...state,
+        techs: state.techs.filter((tech) => tech.id !== action.payload),
         loading: false,
       };
     default:
