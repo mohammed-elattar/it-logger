@@ -6,23 +6,13 @@ import Preloader from '../layout/Preloader';
 import LogItem from './LogItem';
 
 const Logs = () => {
-  //   const [logs, setLogs] = useState([]);
   const { logs, loading } = useSelector((state) => state.log);
   const dispatch = useDispatch();
-  //   const [loading, setLoading] = useState(false);
-  //   const getLogs = async () => {
-  //     setLoading(true);
-  //     const res = await fetch('/logs');
-  //     const logs = await res.json();
-  //     setLoading(false);
-  //     setLogs(logs);
-  //   };
 
   useEffect(() => {
     dispatch(getLogs());
   }, []);
 
-  console.log(logs, 'logs');
   if (loading || !logs) {
     return <Preloader />;
   }
